@@ -1,9 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://e5hwh24nk1a2"]
+[gd_scene load_steps=3 format=3 uid="uid://e5hwh24nk1a2"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_f5vh7"]
 [ext_resource type="Script" path="res://scripts/message_window.gd" id="2_aeahu"]
-
-[sub_resource type="SystemFont" id="SystemFont_6bsyf"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_f5vh7")
@@ -44,39 +42,20 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/Message Window/MarginContainer/PanelContainer/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/Message Window/MarginContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Message Window/MarginContainer/PanelContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_constants/separation = 5
-
-[node name="Label" type="Label" parent="UI/Message Window/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_6bsyf")
-theme_override_font_sizes/font_size = 16
-text = "Welcome"
-
-[node name="Label2" type="Label" parent="UI/Message Window/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_6bsyf")
-theme_override_font_sizes/font_size = 16
-text = "Welcome"
-
-[node name="Label3" type="Label" parent="UI/Message Window/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_6bsyf")
-theme_override_font_sizes/font_size = 16
-text = "Welcome"
-
-[node name="Label4" type="Label" parent="UI/Message Window/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_6bsyf")
-theme_override_font_sizes/font_size = 16
-text = "Welcome"
-
-[node name="Label5" type="Label" parent="UI/Message Window/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_6bsyf")
-theme_override_font_sizes/font_size = 16
-text = "Welcome"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(575, 325)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
