@@ -1,0 +1,77 @@
+[gd_scene load_steps=2 format=3 uid="uid://e5hwh24nk1a2"]
+
+[sub_resource type="SystemFont" id="SystemFont_6bsyf"]
+
+[node name="Main" type="Node2D"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Message Window" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Message Window"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -110.0
+offset_right = 410.0
+grow_vertical = 0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/Message Window/MarginContainer"]
+custom_minimum_size = Vector2(450, 100)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Message Window/MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Message Window/MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Label" type="Label" parent="UI/Message Window/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_6bsyf")
+theme_override_font_sizes/font_size = 16
+text = "Welcome"
+
+[node name="Label2" type="Label" parent="UI/Message Window/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_6bsyf")
+theme_override_font_sizes/font_size = 16
+text = "Welcome"
+
+[node name="Label3" type="Label" parent="UI/Message Window/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_6bsyf")
+theme_override_font_sizes/font_size = 16
+text = "Welcome"
+
+[node name="Label4" type="Label" parent="UI/Message Window/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_6bsyf")
+theme_override_font_sizes/font_size = 16
+text = "Welcome"
+
+[node name="Label5" type="Label" parent="UI/Message Window/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_6bsyf")
+theme_override_font_sizes/font_size = 16
+text = "Welcome"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(575, 325)
