@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://e5hwh24nk1a2"]
+[gd_scene load_steps=4 format=3 uid="uid://e5hwh24nk1a2"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_f5vh7"]
+[ext_resource type="Script" path="res://scripts/message_window.gd" id="2_aeahu"]
 
 [sub_resource type="SystemFont" id="SystemFont_6bsyf"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_f5vh7")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -14,6 +18,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+script = ExtResource("2_aeahu")
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/Message Window"]
 layout_mode = 1
