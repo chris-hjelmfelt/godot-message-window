@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2ebar486qsm3"]
+
+[ext_resource type="Script" path="res://scripts/message_line.gd" id="1_ws0qj"]
+
+[sub_resource type="SystemFont" id="SystemFont_avdbg"]
+subpixel_positioning = 0
+
+[node name="Label" type="Label"]
+theme_override_colors/font_color = Color(0, 0.999, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_avdbg")
+theme_override_font_sizes/font_size = 16
+script = ExtResource("1_ws0qj")
+
+[node name="Timer1" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 55.0
+one_shot = true
+
+[connection signal="timeout" from="Timer1" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

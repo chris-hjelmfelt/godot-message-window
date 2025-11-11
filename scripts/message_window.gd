@@ -5,6 +5,7 @@ extends Control
 @onready var widebox: VBoxContainer = $MarginContainer/WidePanel/MarginContainer/ScrollContainer/VBoxContainer
 @onready var thinlabel: Label = $MarginContainer/ThinPanel/MarginContainer/Label
 @onready var button: TextureButton = $ButtonContainer/TextureButton
+var message_line = preload("res://message_line.tscn")
 
 
 func _ready() -> void:
@@ -14,11 +15,11 @@ func _ready() -> void:
 
 
 func display(message: String):
-	var newline = Label.new()
+	var newline = message_line.instantiate()
 	newline.text = message
 	widebox.add_child(newline)
 	widebox.move_child(newline, 0)
-	thinlabel.text = message  # copy new message to the thin panel
+	#thinlabel.text = message  # copy new message to the thin panel
 
 
 func _on_texture_button_pressed() -> void:

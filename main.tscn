@@ -1,10 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://e5hwh24nk1a2"]
+[gd_scene load_steps=4 format=3 uid="uid://e5hwh24nk1a2"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_f5vh7"]
 [ext_resource type="Script" path="res://scripts/message_window.gd" id="2_aeahu"]
 [ext_resource type="Texture2D" uid="uid://b7s8pa6ri67gs" path="res://Triangle.png" id="3_f7bcd"]
-
-[sub_resource type="SystemFont" id="SystemFont_avdbg"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_f5vh7")
@@ -65,11 +63,6 @@ theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
-
-[node name="Label" type="Label" parent="UI/Message Window/MarginContainer/ThinPanel/MarginContainer"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_avdbg")
-theme_override_font_sizes/font_size = 16
 
 [node name="ButtonContainer" type="MarginContainer" parent="UI/Message Window"]
 custom_minimum_size = Vector2(490, 0)
