@@ -19,7 +19,7 @@ func display(message: String):
 	newline.text = message
 	widebox.add_child(newline)
 	widebox.move_child(newline, 0)
-	#thinlabel.text = message  # copy new message to the thin panel
+	thinlabel.text = message  # copy new message to the thin panel
 
 
 func _on_texture_button_pressed() -> void:

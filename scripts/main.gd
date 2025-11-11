@@ -6,15 +6,11 @@ func _ready():
 	Globals.display_message.emit("Welcome to message window")
 
 
-func send_message():
-	Globals.display_message.emit("Message number " + str(count))
-	count += 1
-
-
 func _unhandled_input(event):
 	if event.is_action_pressed("escape"):
 			get_tree().quit()
 
 
-func _on_timer_timeout() -> void:
-	send_message()
+func _on_button_pressed() -> void:
+	Globals.display_message.emit("Button Click " + str(count))
+	count += 1
